@@ -4,13 +4,13 @@ spring:
       on-profile: prod
 
 build:
-  version: "1.3"
+  version: "card-1.3"
 
-account:
-  message: "Welcome to Accounts Microservice Prod API"
+card:
+  message: "Welcome to Card Microservice Prod API"
   contactDetails:
     email: "0fX2I@example.com"
-    name: "Accounts Team"
+    name: "Cards Team"
   onCallSupport:
     - (555) 555-5555
     - (242) 424-2424

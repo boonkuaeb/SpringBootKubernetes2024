@@ -4,13 +4,13 @@ spring:
       on-profile: qa
 
 build:
-  version: "1.2"
+  version: "loan-1.2"
 
-account:
-  message: "Welcome to Accounts Microservice QA API"
+loan:
+  message: "Welcome to loan Microservice QA API"
   contactDetails:
     email: "0fX2I@example.com"
-    name: "Accounts Team"
+    name: "Loans Team"
   onCallSupport:
     - (555) 555-5555
     - (242) 424-2424

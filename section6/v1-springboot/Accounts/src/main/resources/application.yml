@@ -29,7 +29,7 @@ spring:
 
 
 build:
-  version: "3.0"
+  version: "1.1"
 
 account:
   message: "Welcome to Accounts Microservice local API"
