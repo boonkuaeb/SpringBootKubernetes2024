@@ -1,0 +1,16 @@
+spring:
+  config:
+    activate:
+      on-profile: qa
+
+build:
+  version: "2.0"
+
+account:
+  message: "Welcome to Accounts Microservice QA API"
+  contactDetails:
+    email: "0fX2I@example.com"
+    name: "Accounts Team"
+  onCallSupport:
+    - (555) 555-5555
+    - (242) 424-2424
