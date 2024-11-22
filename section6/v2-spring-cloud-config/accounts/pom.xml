@@ -12,7 +12,7 @@
 	<artifactId>accounts</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>jar</packaging>
-	<name>Accounts</name>
+	<name>accounts</name>
 	<description>Accounts Microservices</description>
 	<url/>
 	<licenses>

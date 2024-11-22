@@ -11,7 +11,7 @@
 	<groupId>com.bk.eazybytes</groupId>
 	<artifactId>configserver</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>Configserver</name>
+	<name>configserver</name>
 	<description>Configserver for eazybytes</description>
 	<url/>
 	<licenses>
