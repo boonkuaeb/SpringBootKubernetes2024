@@ -1,0 +1,36 @@
+server:
+  port: 8090
+spring:
+  datasource:
+    url: jdbc:h2:mem:testdb
+    driverClassName: org.h2.Driver
+    username: sa
+    password: ' '
+  h2:
+    console:
+      enabled: true
+  jpa:
+    database-platform: org.hibernate.dialect.H2Dialect
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+  config:
+    import:
+      - "application_qa.yaml"
+      - "application_prod.yaml"
+  profiles:
+    active:
+      - "qa"
+
+
+build:
+  version: "loan-1.1"
+
+loan:
+  message: "Welcome to Loan Microservice local API"
+  contactDetails:
+    email: "0fX2I@example.com"
+    name: "Loans Team"
+  onCallSupport:
+    - (555) 555-5555
+    - (242) 424-2424

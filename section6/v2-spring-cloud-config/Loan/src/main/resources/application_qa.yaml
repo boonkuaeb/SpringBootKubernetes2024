@@ -1,0 +1,16 @@
+spring:
+  config:
+    activate:
+      on-profile: qa
+
+build:
+  version: "loan-1.2"
+
+loan:
+  message: "Welcome to loan Microservice QA API"
+  contactDetails:
+    email: "0fX2I@example.com"
+    name: "Loans Team"
+  onCallSupport:
+    - (555) 555-5555
+    - (242) 424-2424
