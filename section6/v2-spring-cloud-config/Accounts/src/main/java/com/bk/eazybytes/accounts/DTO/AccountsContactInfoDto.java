@@ -1,4 +1,4 @@
-package com.bk.eazybytes.accounts.DTO;
+package com.bk.eazybytes.accounts.dto;
 
 import org.springframework.boot.context.properties.ConfigurationProperties;
 
