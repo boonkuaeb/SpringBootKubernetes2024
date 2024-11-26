@@ -5,13 +5,13 @@
 	<parent>
 		<groupId>com.bk</groupId>
 		<artifactId>eazybytes</artifactId>
-		<version>0.0.1-SNAPSHOT</version>
+		<version>s6</version>
 	</parent>
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>com.bk.eazybytes</groupId>
 	<artifactId>accounts</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>${image.build.version}</version>
 	<name>accounts</name>
 	<packaging>jar</packaging>
 
