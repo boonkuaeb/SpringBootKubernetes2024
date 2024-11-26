@@ -7,11 +7,14 @@
 		<artifactId>eazybytes</artifactId>
 		<version>s6</version>
 	</parent>
+	<properties>
+		<image.build.version>s6</image.build.version>
+	</properties>
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>com.bk.eazybytes</groupId>
 	<artifactId>accounts</artifactId>
-	<version>${image.build.version}</version>
+	<version>s6</version>
 	<name>accounts</name>
 	<packaging>jar</packaging>
 
@@ -42,7 +45,7 @@
 						<image>eclipse-temurin:21-jre</image>
 					</from>
 					<to>
-						<image>john3kuae/${project.artifactId}:s6</image>
+						<image>john3kuae/${project.artifactId}:${image.build.version}</image>
 					</to>
 				</configuration>
 			</plugin>

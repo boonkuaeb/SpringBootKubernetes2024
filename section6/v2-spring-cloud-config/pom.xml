@@ -21,7 +21,7 @@
     </parent>
     <groupId>com.bk</groupId>
     <artifactId>eazybytes</artifactId>
-    <version>${image.build.version}</version>
+    <version>s6</version>
     <name>eazybytes</name>
     <description>Demo project for Spring Boot</description>
 
