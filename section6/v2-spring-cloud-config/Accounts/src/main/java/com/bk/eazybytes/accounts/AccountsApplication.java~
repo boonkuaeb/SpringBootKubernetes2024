@@ -1,6 +1,6 @@
 package com.bk.eazybytes.accounts;
 
-import com.bk.eazybytes.accounts.DTO.AccountContactInfoDto;
+import com.bk.eazybytes.accounts.DTO.AccountsContactInfoDto;
 import io.swagger.v3.oas.annotations.ExternalDocumentation;
 import io.swagger.v3.oas.annotations.OpenAPIDefinition;
 import io.swagger.v3.oas.annotations.info.Contact;
@@ -16,7 +16,7 @@ import org.springframework.data.jpa.repository.config.EnableJpaAuditing;
 @EnableJpaRepositories("com.eazybytes.accounts.repository")
 @EntityScan("com.eazybytes.accounts.model")*/
 @EnableJpaAuditing(auditorAwareRef = "auditAwareImpl")
-@EnableConfigurationProperties(value = AccountContactInfoDto.class)
+@EnableConfigurationProperties(value = AccountsContactInfoDto.class)
 @OpenAPIDefinition(
 		info = @Info(
 				title = "Accounts microservice REST API Documentation",
