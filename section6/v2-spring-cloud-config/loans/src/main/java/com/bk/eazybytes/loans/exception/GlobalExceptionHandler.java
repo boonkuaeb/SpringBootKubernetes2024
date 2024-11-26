@@ -1,6 +1,6 @@
 package com.bk.eazybytes.loans.exception;
 
-import com.bk.eazybytes.loans.dto.response.ErrorResponseDTO;
+import com.bk.eazybytes.loans.dto.response.ErrorResponseDto;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.HttpStatusCode;
@@ -37,9 +37,9 @@ public class GlobalExceptionHandler extends ResponseEntityExceptionHandler {
     }
 
     @ExceptionHandler(ResourceNotFoundException.class)
-    public ResponseEntity<ErrorResponseDTO> handleResourceNotFoundException(
+    public ResponseEntity<ErrorResponseDto> handleResourceNotFoundException(
             ResourceNotFoundException exception, WebRequest webRequest){
-        ErrorResponseDTO errorResponseDTO = new ErrorResponseDTO(
+        ErrorResponseDto errorResponseDTO = new ErrorResponseDto(
                 webRequest.getDescription(false),
                 HttpStatus.NOT_FOUND,
                 exception.getMessage(),
@@ -49,9 +49,9 @@ public class GlobalExceptionHandler extends ResponseEntityExceptionHandler {
     }
 
     @ExceptionHandler(Exception.class)
-    public ResponseEntity<ErrorResponseDTO> handleGlobalException(
+    public ResponseEntity<ErrorResponseDto> handleGlobalException(
             Exception exception, WebRequest webRequest){
-        ErrorResponseDTO errorResponseDTO = new ErrorResponseDTO(
+        ErrorResponseDto errorResponseDTO = new ErrorResponseDto(
                 webRequest.getDescription(false),
                 HttpStatus.INTERNAL_SERVER_ERROR,
                 exception.getMessage(),
@@ -61,9 +61,9 @@ public class GlobalExceptionHandler extends ResponseEntityExceptionHandler {
     }
 
     @ExceptionHandler(LoanAlreadyExistsException.class)
-    public ResponseEntity<ErrorResponseDTO> handleCustomerAlreadyExistsException(
+    public ResponseEntity<ErrorResponseDto> handleCustomerAlreadyExistsException(
             LoanAlreadyExistsException exception, WebRequest webRequest){
-        ErrorResponseDTO errorResponseDTO = new ErrorResponseDTO(
+        ErrorResponseDto errorResponseDTO = new ErrorResponseDto(
                 webRequest.getDescription(false),
                 HttpStatus.BAD_REQUEST,
                 exception.getMessage(),

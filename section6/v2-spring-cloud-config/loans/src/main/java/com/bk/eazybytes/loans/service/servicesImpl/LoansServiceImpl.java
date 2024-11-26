@@ -1,7 +1,7 @@
 package com.bk.eazybytes.loans.service.servicesImpl;
 
 import com.bk.eazybytes.loans.constants.LoansConstants;
-import com.bk.eazybytes.loans.dto.LoanDTO;
+import com.bk.eazybytes.loans.dto.LoanDto;
 import com.bk.eazybytes.loans.entity.Loans;
 import com.bk.eazybytes.loans.exception.LoanAlreadyExistsException;
 import com.bk.eazybytes.loans.exception.ResourceNotFoundException;
@@ -53,11 +53,11 @@ public class LoansServiceImpl implements ILoansService {
      * @return Loan Details based on a given mobileNumber
      */
     @Override
-    public LoanDTO fetchLoan(String mobileNumber) {
+    public LoanDto fetchLoan(String mobileNumber) {
         Loans loans = loansRepository.findByMobileNumber(mobileNumber).orElseThrow(
                 () -> new ResourceNotFoundException("Loan", "mobileNumber", mobileNumber)
         );
-        return LoanMapper.mapToLoanDTO(loans, new LoanDTO());
+        return LoanMapper.mapToLoanDTO(loans, new LoanDto());
     }
 
     /**
@@ -65,7 +65,7 @@ public class LoansServiceImpl implements ILoansService {
      * @return boolean indicating if the update of card details is successful or not
      */
     @Override
-    public boolean updateLoan(LoanDTO loanDTO) {
+    public boolean updateLoan(LoanDto loanDTO) {
         Loans loans = loansRepository.findByLoanNumber(loanDTO.getLoanNumber()).orElseThrow(
                 () -> new ResourceNotFoundException("Loan", "LoanNumber", loanDTO.getLoanNumber())
         );

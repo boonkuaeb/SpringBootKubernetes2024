@@ -1,11 +1,11 @@
 package com.bk.eazybytes.loans.mapper;
 
-import com.bk.eazybytes.loans.dto.LoanDTO;
+import com.bk.eazybytes.loans.dto.LoanDto;
 import com.bk.eazybytes.loans.entity.Loans;
 
 public class LoanMapper {
 
-    public static LoanDTO mapToLoanDTO(Loans loans, LoanDTO loanDTO){
+    public static LoanDto mapToLoanDTO(Loans loans, LoanDto loanDTO){
         loanDTO.setLoanNumber(loans.getLoanNumber());
         loanDTO.setLoanType(loans.getLoanType());
         loanDTO.setMobileNumber(loans.getMobileNumber());
@@ -15,7 +15,7 @@ public class LoanMapper {
         return loanDTO;
     }
 
-    public static Loans mapToLoans(LoanDTO loanDTO, Loans loans){
+    public static Loans mapToLoans(LoanDto loanDTO, Loans loans){
         loans.setLoanNumber(loanDTO.getLoanNumber());
         loans.setLoanType(loanDTO.getLoanType());
         loans.setMobileNumber(loanDTO.getMobileNumber());
