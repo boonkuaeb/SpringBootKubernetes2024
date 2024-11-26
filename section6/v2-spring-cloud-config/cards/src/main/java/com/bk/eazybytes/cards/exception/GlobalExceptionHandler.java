@@ -1,6 +1,6 @@
 package com.bk.eazybytes.cards.exception;
 
-import com.bk.eazybytes.cards.dto.Response.ErrorResponseDTO;
+import com.bk.eazybytes.cards.dto.response.ErrorResponseDTO;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.HttpStatusCode;

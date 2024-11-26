@@ -1,4 +1,4 @@
-package com.bk.eazybytes.cards.service.ServiceImpl;
+package com.bk.eazybytes.cards.service.serviceImpl;
 
 import com.bk.eazybytes.cards.constants.CardsConstants;
 import com.bk.eazybytes.cards.dto.CardsDTO;

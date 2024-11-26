@@ -3,8 +3,8 @@ package com.bk.eazybytes.loans.controller;
 import com.bk.eazybytes.loans.constants.LoansConstants;
 import com.bk.eazybytes.loans.dto.LoanContactInfoDto;
 import com.bk.eazybytes.loans.dto.LoanDTO;
-import com.bk.eazybytes.loans.dto.Response.ErrorResponseDTO;
-import com.bk.eazybytes.loans.dto.Response.ResponseDTO;
+import com.bk.eazybytes.loans.dto.response.ErrorResponseDTO;
+import com.bk.eazybytes.loans.dto.response.ResponseDTO;
 
 import com.bk.eazybytes.loans.service.ILoansService;
 import io.swagger.v3.oas.annotations.Operation;

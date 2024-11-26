@@ -1,4 +1,4 @@
-package com.bk.eazybytes.loans.service.ServicesImpl;
+package com.bk.eazybytes.loans.service.servicesImpl;
 
 import com.bk.eazybytes.loans.constants.LoansConstants;
 import com.bk.eazybytes.loans.dto.LoanDTO;

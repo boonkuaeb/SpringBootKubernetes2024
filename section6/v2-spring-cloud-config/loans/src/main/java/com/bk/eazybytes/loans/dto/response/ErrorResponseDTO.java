@@ -1,4 +1,4 @@
-package com.bk.eazybytes.loans.dto.Response;
+package com.bk.eazybytes.loans.dto.response;
 
 import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.AllArgsConstructor;

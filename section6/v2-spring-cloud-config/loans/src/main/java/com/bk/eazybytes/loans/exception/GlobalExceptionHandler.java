@@ -1,6 +1,6 @@
 package com.bk.eazybytes.loans.exception;
 
-import com.bk.eazybytes.loans.dto.Response.ErrorResponseDTO;
+import com.bk.eazybytes.loans.dto.response.ErrorResponseDTO;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.HttpStatusCode;

@@ -1,4 +1,4 @@
-package com.bk.eazybytes.accounts.service.ServiceImpl;
+package com.bk.eazybytes.accounts.service.serviceImpl;
 
 import com.bk.eazybytes.accounts.constants.AccountsConstants;
 import com.bk.eazybytes.accounts.dto.AccountsDto;
