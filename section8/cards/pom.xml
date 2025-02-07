@@ -13,7 +13,9 @@
 	<packaging>jar</packaging>
 	<name>cards</name>
 	<description>Microservice for Cards</description>
-
+	<properties>
+		<start-class>com.bk.eazybytes.cards.CardApplication</start-class>
+	</properties>
 	<build>
 		<plugins>
 			<plugin>
@@ -34,10 +36,10 @@
 				<version>3.3.2</version>
 				<configuration>
 					<from>
-							<image>eclipse-temurin:21-jre</image>
+						<image>eclipse-temurin:21-jre@sha256:b2fd6f29dbdd6f32ca735a828f8e6f0d2cdcd941c02c94ac6cedaa9c58e8113b</image>
 					</from>
 					<to>
-						<image>john3kuae/eazybytes-${project.artifactId}:s6</image>
+						<image>john3kuae/eazybytes-${project.artifactId}:${image.build.version}</image>
 					</to>
 				</configuration>
 			</plugin>

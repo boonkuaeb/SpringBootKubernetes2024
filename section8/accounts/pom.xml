@@ -11,13 +11,15 @@
 
 	<groupId>com.bk.eazybytes</groupId>
 	<artifactId>accounts</artifactId>
-	<version>s8</version>
+	<version>${image.build.version}</version>
 	<name>accounts</name>
 	<packaging>jar</packaging>
 
-
-
 	<description>Accounts Microservices</description>
+
+	<properties>
+		<start-class>com.bk.eazybytes.accounts.AccountsApplication</start-class>
+	</properties>
 	<url/>
 	<licenses>
 		<license/>
@@ -39,7 +41,7 @@
 				<version>3.3.2</version>
 				<configuration>
 					<from>
-						<image>eclipse-temurin:21-jre</image>
+						<image>eclipse-temurin:21-jre@sha256:b2fd6f29dbdd6f32ca735a828f8e6f0d2cdcd941c02c94ac6cedaa9c58e8113b</image>
 					</from>
 					<to>
 						<image>john3kuae/eazybytes-${project.artifactId}:${image.build.version}</image>
