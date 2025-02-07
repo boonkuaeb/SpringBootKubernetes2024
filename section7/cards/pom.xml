@@ -5,11 +5,10 @@
 	<parent>
 		<groupId>com.bk</groupId>
 		<artifactId>eazybytes</artifactId>
-		<version>s6</version>
+		<version>s7</version>
 	</parent>
 	<groupId>com.bk.eazybytes</groupId>
 	<artifactId>cards</artifactId>
-	<version>${image.build.version}</version>
 	<packaging>jar</packaging>
 	<name>cards</name>
 	<description>Microservice for Cards</description>
@@ -44,7 +43,7 @@
 							<image>eclipse-temurin:21-jre</image>
 					</from>
 					<to>
-						<image>john3kuae/${project.artifactId}:s6</image>
+						<image>john3kuae/eazybytes-${project.artifactId}:${image.build.version}</image>
 					</to>
 				</configuration>
 			</plugin>

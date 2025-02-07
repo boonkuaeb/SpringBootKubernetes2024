@@ -6,14 +6,14 @@
 	<parent>
 		<groupId>com.bk</groupId>
 		<artifactId>eazybytes</artifactId>
-		<version>s6</version>
+		<version>s7</version>
 	</parent>
 	<groupId>com.bk.eazybytes</groupId>
 	<artifactId>loans</artifactId>
-	<version>${image.build.version}</version>
 	<packaging>jar</packaging>
 	<name>loans</name>
 	<description>Loan Session for Microservices</description>
+
 
 	<dependencies>
 		<dependency>
@@ -33,7 +33,7 @@
 						<image>eclipse-temurin:21-jre</image>
 					</from>
 					<to>
-						<image>john3kuae/${project.artifactId}:${image.build.version}</image>
+						<image>john3kuae/eazybytes-${project.artifactId}:${image.build.version}</image>
 					</to>
 				</configuration>
 			</plugin>

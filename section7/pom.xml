@@ -3,7 +3,7 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <properties>
-        <image.build.version>s6</image.build.version>
+        <image.build.version>s7</image.build.version>
         <java.version>21</java.version>
         <spring-cloud.version>2023.0.3</spring-cloud.version>
     </properties>
@@ -21,7 +21,7 @@
     </parent>
     <groupId>com.bk</groupId>
     <artifactId>eazybytes</artifactId>
-    <version>s6</version>
+    <version>${image.build.version}</version>
     <name>eazybytes</name>
     <description>Demo project for Spring Boot</description>
 
