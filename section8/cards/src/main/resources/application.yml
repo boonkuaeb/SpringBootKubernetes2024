@@ -26,3 +26,25 @@ management:
     web:
       exposure:
         include: "*"
+  endpoint:
+    shutdown:
+      unrestricted: true
+
+  info:
+    env:
+      enabled: true
+
+
+eureka:
+  instance:
+    preferIpAddress: true
+  client:
+    registerWithEureka: true
+    fetchRegistry: true
+    serviceUrl:
+      defaultZone: http://localhost:8070/eureka/
+info:
+  app:
+    name: ${spring.application.name}
+    description: "Eazy Bank Cards Application"
+    version: "1.0.0"
