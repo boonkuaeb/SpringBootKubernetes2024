@@ -2,9 +2,9 @@ package com.bk.eazybytes.cards.controller;
 
 import com.bk.eazybytes.cards.constants.CardsConstants;
 import com.bk.eazybytes.cards.dto.CardContactInfoDto;
-import com.bk.eazybytes.cards.dto.CardsDTO;
-import com.bk.eazybytes.cards.dto.response.ErrorResponseDTO;
-import com.bk.eazybytes.cards.dto.response.ResponseDTO;
+import com.bk.eazybytes.cards.dto.CardsDto;
+import com.bk.eazybytes.cards.dto.response.ErrorResponseDto;
+import com.bk.eazybytes.cards.dto.response.ResponseDto;
 import com.bk.eazybytes.cards.service.ICardsService;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.media.Content;
@@ -64,19 +64,19 @@ public class CardsController {
                     responseCode = "500",
                     description = "HTTP Status Internal Server Error",
                     content = @Content(
-                            schema = @Schema(implementation = ErrorResponseDTO.class)
+                            schema = @Schema(implementation = ErrorResponseDto.class)
                     )
             )
     }
     )
     @PostMapping("/create")
-    public ResponseEntity<ResponseDTO> createCard(@Valid @RequestParam
+    public ResponseEntity<ResponseDto> createCard(@Valid @RequestParam
                                                   @Pattern(regexp="(^$|[0-9]{10})",message = "Mobile number must be 10 digits")
                                                   String mobileNumber) {
         iCardsService.createCard(mobileNumber);
         return ResponseEntity
                 .status(HttpStatus.CREATED)
-                .body(new ResponseDTO(CardsConstants.STATUS_201, CardsConstants.MESSAGE_201));
+                .body(new ResponseDto(CardsConstants.STATUS_201, CardsConstants.MESSAGE_201));
     }
 
     @Operation(
@@ -92,15 +92,15 @@ public class CardsController {
                     responseCode = "500",
                     description = "HTTP Status Internal Server Error",
                     content = @Content(
-                            schema = @Schema(implementation = ErrorResponseDTO.class)
+                            schema = @Schema(implementation = ErrorResponseDto.class)
                     )
             )
     })
     @GetMapping("/fetch")
-    public ResponseEntity<CardsDTO> fetchCardDetails(@RequestParam
+    public ResponseEntity<CardsDto> fetchCardDetails(@RequestParam
                                                      @Pattern(regexp="(^$|[0-9]{10})",message = "Mobile number must be 10 digits")
                                                      String mobileNumber) {
-        CardsDTO cardsDto = iCardsService.fetchCard(mobileNumber);
+        CardsDto cardsDto = iCardsService.fetchCard(mobileNumber);
         return ResponseEntity.status(HttpStatus.OK).body(cardsDto);
     }
 
@@ -121,21 +121,21 @@ public class CardsController {
                     responseCode = "500",
                     description = "HTTP Status Internal Server Error",
                     content = @Content(
-                            schema = @Schema(implementation = ErrorResponseDTO.class)
+                            schema = @Schema(implementation = ErrorResponseDto.class)
                     )
             )
     })
     @PutMapping("/update")
-    public ResponseEntity<ResponseDTO> updateCardDetails(@Valid @RequestBody CardsDTO cardsDto) {
+    public ResponseEntity<ResponseDto> updateCardDetails(@Valid @RequestBody CardsDto cardsDto) {
         boolean isUpdated = iCardsService.updateCard(cardsDto);
         if(isUpdated) {
             return ResponseEntity
                     .status(HttpStatus.OK)
-                    .body(new ResponseDTO(CardsConstants.STATUS_200, CardsConstants.MESSAGE_200));
+                    .body(new ResponseDto(CardsConstants.STATUS_200, CardsConstants.MESSAGE_200));
         }else{
             return ResponseEntity
                     .status(HttpStatus.EXPECTATION_FAILED)
-                    .body(new ResponseDTO(CardsConstants.STATUS_417, CardsConstants.MESSAGE_417_UPDATE));
+                    .body(new ResponseDto(CardsConstants.STATUS_417, CardsConstants.MESSAGE_417_UPDATE));
         }
     }
 
@@ -156,23 +156,23 @@ public class CardsController {
                     responseCode = "500",
                     description = "HTTP Status Internal Server Error",
                     content = @Content(
-                            schema = @Schema(implementation = ErrorResponseDTO.class)
+                            schema = @Schema(implementation = ErrorResponseDto.class)
                     )
             )
     })
     @DeleteMapping("/delete")
-    public ResponseEntity<ResponseDTO> deleteCardDetails(@RequestParam
+    public ResponseEntity<ResponseDto> deleteCardDetails(@RequestParam
                                                          @Pattern(regexp="(^$|[0-9]{10})",message = "Mobile number must be 10 digits")
                                                          String mobileNumber) {
         boolean isDeleted = iCardsService.deleteCard(mobileNumber);
         if(isDeleted) {
             return ResponseEntity
                     .status(HttpStatus.OK)
-                    .body(new ResponseDTO(CardsConstants.STATUS_200, CardsConstants.MESSAGE_200));
+                    .body(new ResponseDto(CardsConstants.STATUS_200, CardsConstants.MESSAGE_200));
         }else{
             return ResponseEntity
                     .status(HttpStatus.EXPECTATION_FAILED)
-                    .body(new ResponseDTO(CardsConstants.STATUS_417, CardsConstants.MESSAGE_417_DELETE));
+                    .body(new ResponseDto(CardsConstants.STATUS_417, CardsConstants.MESSAGE_417_DELETE));
         }
     }
 
@@ -189,7 +189,7 @@ public class CardsController {
                     responseCode = "500",
                     description = "HTTP Status Internal Server Error",
                     content = @Content(
-                            schema = @Schema(implementation = ErrorResponseDTO.class)
+                            schema = @Schema(implementation = ErrorResponseDto.class)
                     )
             )
     }
@@ -215,7 +215,7 @@ public class CardsController {
                     responseCode = "500",
                     description = "HTTP Status Internal Server Error",
                     content = @Content(
-                            schema = @Schema(implementation = ErrorResponseDTO.class)
+                            schema = @Schema(implementation = ErrorResponseDto.class)
                     )
             )
     }
@@ -242,7 +242,7 @@ public class CardsController {
                     responseCode = "500",
                     description = "HTTP Status Internal Server Error",
                     content = @Content(
-                            schema = @Schema(implementation = ErrorResponseDTO.class)
+                            schema = @Schema(implementation = ErrorResponseDto.class)
                     )
             )
     }

@@ -12,7 +12,7 @@ import lombok.Data;
         description = "Schema to hold loan information"
 )
 @Data
-public class LoanDto {
+public class LoansDto {
 
     @NotEmpty(message = "Mobile Number can not be null or empty")
     @Pattern(regexp = "(^$|[0-9]{10})", message = "Mobile number must be 10 digits")

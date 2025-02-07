@@ -1,8 +1,8 @@
 package com.bk.eazybytes.loans.controller;
 
 import com.bk.eazybytes.loans.constants.LoansConstants;
-import com.bk.eazybytes.loans.dto.LoanContactInfoDto;
-import com.bk.eazybytes.loans.dto.LoanDto;
+import com.bk.eazybytes.loans.dto.LoansContactInfoDto;
+import com.bk.eazybytes.loans.dto.LoansDto;
 import com.bk.eazybytes.loans.dto.response.ErrorResponseDto;
 import com.bk.eazybytes.loans.dto.response.ResponseDto;
 import com.bk.eazybytes.loans.service.ILoansService;
@@ -45,7 +45,7 @@ public class LoansController {
     private Environment environment;
 
     @Autowired
-    private LoanContactInfoDto contactInfoDto;
+    private LoansContactInfoDto contactInfoDto;
 
     public LoansController(ILoansService iLoansService) {
         this.iLoansService = iLoansService;
@@ -99,11 +99,11 @@ public class LoansController {
     }
     )
     @GetMapping("/fetch")
-    public ResponseEntity<LoanDto> fetchLoanDetails(@RequestParam
+    public ResponseEntity<LoansDto> fetchLoanDetails(@RequestParam
                                                      @Pattern(regexp="(^$|[0-9]{10})",message = "Mobile number must be 10 digits")
                                                      String mobileNumber) {
-       LoanDto loanDTO = iLoansService.fetchLoan(mobileNumber);
-        return ResponseEntity.status(HttpStatus.OK).body(loanDTO);
+       LoansDto loansDTO = iLoansService.fetchLoan(mobileNumber);
+        return ResponseEntity.status(HttpStatus.OK).body(loansDTO);
     }
 
     @Operation(
@@ -129,8 +129,8 @@ public class LoansController {
     }
     )
     @PutMapping("/update")
-    public ResponseEntity<ResponseDto> updateLoanDetails(@Valid @RequestBody LoanDto loanDTO) {
-        boolean isUpdated = iLoansService.updateLoan(loanDTO);
+    public ResponseEntity<ResponseDto> updateLoanDetails(@Valid @RequestBody LoansDto loansDTO) {
+        boolean isUpdated = iLoansService.updateLoan(loansDTO);
         if(isUpdated) {
             return ResponseEntity
                     .status(HttpStatus.OK)
@@ -253,7 +253,7 @@ public class LoansController {
     }
     )
     @GetMapping("/contact-info")
-    public ResponseEntity<LoanContactInfoDto> getContactInfo() {
+    public ResponseEntity<LoansContactInfoDto> getContactInfo() {
 
         return ResponseEntity
                 .status(HttpStatus.OK)

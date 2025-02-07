@@ -1,7 +1,7 @@
 package com.bk.eazybytes.cards.service.serviceImpl;
 
 import com.bk.eazybytes.cards.constants.CardsConstants;
-import com.bk.eazybytes.cards.dto.CardsDTO;
+import com.bk.eazybytes.cards.dto.CardsDto;
 import com.bk.eazybytes.cards.entity.Cards;
 import com.bk.eazybytes.cards.exception.CardAlreadyExistsException;
 import com.bk.eazybytes.cards.exception.ResourceNotFoundException;
@@ -53,11 +53,11 @@ public class CardsServiceImpl implements ICardsService {
      * @return Card Details based on a given mobileNumber
      */
     @Override
-    public CardsDTO fetchCard(String mobileNumber) {
+    public CardsDto fetchCard(String mobileNumber) {
         Cards cards = cardsRepository.findByMobileNumber(mobileNumber).orElseThrow(
                 () -> new ResourceNotFoundException("Card", "mobileNumber", mobileNumber)
         );
-        return CardsMapper.mapToCardsDto(cards, new CardsDTO());
+        return CardsMapper.mapToCardsDto(cards, new CardsDto());
     }
 
     /**
@@ -65,7 +65,7 @@ public class CardsServiceImpl implements ICardsService {
      * @return boolean indicating if the update of card details is successful or not
      */
     @Override
-    public boolean updateCard(CardsDTO cardsDto) {
+    public boolean updateCard(CardsDto cardsDto) {
         Cards cards = cardsRepository.findByCardNumber(cardsDto.getCardNumber()).orElseThrow(
                 () -> new ResourceNotFoundException("Card", "CardNumber", cardsDto.getCardNumber()));
         CardsMapper.mapToCards(cardsDto, cards);

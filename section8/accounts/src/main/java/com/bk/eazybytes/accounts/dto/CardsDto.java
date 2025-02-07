@@ -1,4 +1,4 @@
-package com.bk.eazybytes.cards.dto;
+package com.bk.eazybytes.accounts.dto;
 
 import io.swagger.v3.oas.annotations.media.Schema;
 import jakarta.validation.constraints.NotEmpty;
@@ -11,7 +11,7 @@ import lombok.Data;
         description = "Schema to hold Card information"
 )
 @Data
-public class CardsDTO {
+public class CardsDto {
 
     @NotEmpty(message = "Mobile Number can not be a null or empty")
     @Pattern(regexp="(^$|[0-9]{10})",message = "Mobile Number must be 10 digits")

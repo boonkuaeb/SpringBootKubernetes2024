@@ -1,6 +1,6 @@
 package com.bk.eazybytes.cards.service;
 
-import com.bk.eazybytes.cards.dto.CardsDTO;
+import com.bk.eazybytes.cards.dto.CardsDto;
 
 public interface ICardsService {
     /**
@@ -12,13 +12,13 @@ public interface ICardsService {
      * @param mobileNumber - Input mobile Number
      *  @return Card Details based on a given mobileNumber
      */
-    CardsDTO fetchCard(String mobileNumber);
+    CardsDto fetchCard(String mobileNumber);
 
     /**
      * @param cardsDto - CardsDto Object
      * @return boolean indicating if the update of card details is successful or not
      */
-    boolean updateCard(CardsDTO cardsDto);
+    boolean updateCard(CardsDto cardsDto);
 
     /**
      * @param mobileNumber - Input Mobile Number

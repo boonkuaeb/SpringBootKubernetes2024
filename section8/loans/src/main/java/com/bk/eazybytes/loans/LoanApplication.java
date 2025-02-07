@@ -1,6 +1,6 @@
 package com.bk.eazybytes.loans;
 
-import com.bk.eazybytes.loans.dto.LoanContactInfoDto;
+import com.bk.eazybytes.loans.dto.LoansContactInfoDto;
 import io.swagger.v3.oas.annotations.ExternalDocumentation;
 import io.swagger.v3.oas.annotations.OpenAPIDefinition;
 import io.swagger.v3.oas.annotations.info.Contact;
@@ -16,7 +16,7 @@ import org.springframework.data.jpa.repository.config.EnableJpaAuditing;
 //@EnableJpaRepositories("com.bk.eazybytes.Loan.Repository")
 //@EntityScan("com.bk.eazybytes.Loan.Entity")
 
-@EnableConfigurationProperties(value = LoanContactInfoDto.class)
+@EnableConfigurationProperties(value = LoansContactInfoDto.class)
 
 @EnableJpaAuditing(auditorAwareRef = "auditAwareImpl")
 @OpenAPIDefinition(
