@@ -15,7 +15,7 @@
 	<name>loans</name>
 	<description>Loan Session for Microservices</description>
 	<properties>
-		<start-class>com.bk.eazybytes.cards.LoanApplication</start-class>
+		<start-class>com.bk.eazybytes.loans.LoanApplication</start-class>
 	</properties>
 	<build>
 		<plugins>
