@@ -31,6 +31,7 @@ management:
   endpoint:
     shutdown:
       unrestricted: true
+      enabled: true
 
   info:
     env:
