@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+		 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		 xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>com.bk</groupId>
+		<artifactId>eazybytes</artifactId>
+		<version>s9</version>
+	</parent>
+	<groupId>com.bk.eazybytes</groupId>
+	<artifactId>loans</artifactId>
+	<version>${image.build.version}</version>
+	<packaging>jar</packaging>
+	<name>loans</name>
+	<description>Loan Session for Microservices</description>
+	<properties>
+		<start-class>com.bk.eazybytes.loans.LoanApplication</start-class>
+	</properties>
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>com.google.cloud.tools</groupId>
+				<artifactId>jib-maven-plugin</artifactId>
+				<version>3.3.2</version>
+				<configuration>
+					<from>
+						<image>eclipse-temurin:21-jre@sha256:b2fd6f29dbdd6f32ca735a828f8e6f0d2cdcd941c02c94ac6cedaa9c58e8113b</image>
+					</from>
+					<to>
+						<image>john3kuae/eazybytes-${project.artifactId}:${image.build.version}</image>
+					</to>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+
+</project>
