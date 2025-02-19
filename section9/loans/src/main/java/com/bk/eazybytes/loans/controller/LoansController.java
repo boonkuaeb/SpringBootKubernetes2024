@@ -14,6 +14,8 @@ import io.swagger.v3.oas.annotations.responses.ApiResponses;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.validation.Valid;
 import jakarta.validation.constraints.Pattern;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.core.env.Environment;
@@ -51,6 +53,7 @@ public class LoansController {
         this.iLoansService = iLoansService;
     }
 
+    private static final Logger logger = LoggerFactory.getLogger(LoansController.class);
 
     @Operation(
             summary = "Create Loan REST API",
@@ -71,9 +74,11 @@ public class LoansController {
     }
     )
     @PostMapping("/create")
-    public ResponseEntity<ResponseDto> createLoan(@RequestParam
+    public ResponseEntity<ResponseDto> createLoan(@RequestHeader("eazybank-correlation-id") String correlationId,
+            @RequestParam
                                                   @Pattern(regexp="(^$|[0-9]{10})",message = "Mobile number must be 10 digits")
                                                   String mobileNumber) {
+
         iLoansService.createLoan(mobileNumber);
         return ResponseEntity
                 .status(HttpStatus.CREATED)
@@ -99,10 +104,11 @@ public class LoansController {
     }
     )
     @GetMapping("/fetch")
-    public ResponseEntity<LoansDto> fetchLoanDetails(@RequestParam
+    public ResponseEntity<LoansDto> fetchLoanDetails(@RequestHeader("eazybank-correlation-id") String correlationId,@RequestParam
                                                      @Pattern(regexp="(^$|[0-9]{10})",message = "Mobile number must be 10 digits")
                                                      String mobileNumber) {
-       LoansDto loansDTO = iLoansService.fetchLoan(mobileNumber);
+        logger.debug("eazyBank-correlation-id found in LoansController : {}", correlationId);
+        LoansDto loansDTO = iLoansService.fetchLoan(mobileNumber);
         return ResponseEntity.status(HttpStatus.OK).body(loansDTO);
     }
 
@@ -129,7 +135,7 @@ public class LoansController {
     }
     )
     @PutMapping("/update")
-    public ResponseEntity<ResponseDto> updateLoanDetails(@Valid @RequestBody LoansDto loansDTO) {
+    public ResponseEntity<ResponseDto> updateLoanDetails(@RequestHeader("eazybank-correlation-id") String correlationId,@Valid @RequestBody LoansDto loansDTO) {
         boolean isUpdated = iLoansService.updateLoan(loansDTO);
         if(isUpdated) {
             return ResponseEntity
@@ -165,7 +171,7 @@ public class LoansController {
     }
     )
     @DeleteMapping("/delete")
-    public ResponseEntity<ResponseDto> deleteLoanDetails(@RequestParam
+    public ResponseEntity<ResponseDto> deleteLoanDetails(@RequestHeader("eazybank-correlation-id") String correlationId,@RequestParam
                                                          @Pattern(regexp="(^$|[0-9]{10})",message = "Mobile number must be 10 digits")
                                                          String mobileNumber) {
         boolean isDeleted = iLoansService.deleteLoan(mobileNumber);

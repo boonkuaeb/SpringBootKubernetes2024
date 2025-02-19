@@ -49,3 +49,6 @@ info:
     name: ${spring.application.name}
     description: "Eazy Bank Cards Application"
     version: "1.0.0"
+logging:
+  level:
+    com.bk: DEBUG
